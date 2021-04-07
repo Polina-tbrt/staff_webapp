@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Другая страница</title>
+</head>
+<body>
+<h1>Сотрудник</h1>
+
+<h2>Фамилия: <span th:text="${person.name}"></span></h2>
+<h2>Зарплата: <span th:text="${person.salary}"></span></h2>
+
+<h2>Его начисления:</h2>
+<ol>
+    <li><a href="../static/payment.html">За ммарт 2020</a></li>
+    <li><a href="../static/payment.html">За апрель 2020</a></li>
+</ol>
+</body>
+</html>
