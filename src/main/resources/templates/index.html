@@ -2,20 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Моя первая страница</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="../static/styles/style.css" th:href="@{/styles/style.css}">
 </head>
 <body>
-<h1>СОтрудники</h1>
-
-<h2 th:text="${hello}"></h2>
+<h1>Сотрудники</h1>
 
 <ul>
-<!--   for (int index = 0; i < persons.length; ++i) {
-           Person p = persons.get(index);
--->
     <li th:each="p : ${persons}">
-        <a th:href="'person/' + ${p.id}" th:text="${p.name}">!!!</a>
+        <a th:href="'person/' + ${p.id}" th:text="${p.name}" href="person.html">Тауберт П.И.</a>
     </li>
 </ul>
 
