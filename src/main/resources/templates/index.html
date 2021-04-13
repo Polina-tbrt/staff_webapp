@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="../static/styles/style.css" th:href="@{/styles/style.css}">
 </head>
 <body>
-<h1 class = staff>Сотрудники</h1>
+<h1 class = "staff">Сотрудники</h1>
 
 <ul class = "list">
     <li th:each="p : ${persons}">
         <a th:href="'person/' + ${p.id}" th:text="${p.name}" href="person.html">Тауберт П.И.</a>
     </li>
 </ul>
-<img src="../static/img/staff.jpg" th:src="@{/img/staff.jpg}" alt="Staff">
+<img class="img" src="../static/img/staff.jpg" th:src="@{/img/staff.jpg}" alt="Staff">
 </body>
 </html>
