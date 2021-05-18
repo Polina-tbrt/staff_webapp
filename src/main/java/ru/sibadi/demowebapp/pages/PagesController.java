@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.sibadi.demowebapp.domain.Payment;
 import ru.sibadi.demowebapp.domain.Person;
+import ru.sibadi.demowebapp.repository.PaymentRepository;
 import ru.sibadi.demowebapp.repository.PersonRepository;
 
 import java.util.List;
@@ -17,9 +18,11 @@ import java.util.Random;
 public class PagesController {
 
     private final PersonRepository personRepository;
+    private final PaymentRepository paymentRepository;
 
-    public PagesController(PersonRepository personRepository) {
+    public PagesController(PersonRepository personRepository, PaymentRepository paymentRepository) {
         this.personRepository = personRepository;
+        this.paymentRepository = paymentRepository;
     }
 
     // GET http://localhost:8080/
@@ -37,7 +40,7 @@ public class PagesController {
     ) {
         Person person = personRepository.findPersonById(id);
         model.addAttribute("person", person);
-        model.addAttribute("payments", person.getPayments());
+        model.addAttribute("payments", paymentRepository.getPaymentsByPersonId(id));
         return "person"; // person.html
     }
 
@@ -48,8 +51,8 @@ public class PagesController {
             @PathVariable("paymentId") int paymentId,
             Model model
     ) {
-        Person person = personRepository.findPersonById(personId);
-        model.addAttribute("payment", person.searchPaymentById(paymentId));
+        Payment payment = paymentRepository.getPaymentById(paymentId);
+        model.addAttribute("payment", payment);
         return "payment";
     }
 

@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="../static/styles/style.css" th:href="@{/styles/style.css}">
 </head>
 <body>
-<h1 th:text="'Начисление за ' + ${payment.getDate}">Начисление за январь 2020</h1>
+<h1 th:text="'Начисление за ' + ${payment.date}">Начисление за январь 2020</h1>
 
-<span th:text="'Зароботная плата - ' + ${payment.getSalary} + ' рублей.'">
-    Зароботная плата - 10000 рублей.
+<span th:text="'Зароботная плата - ' + ${payment.salary} + ' рублей.'">
+    Заработная плата - 10000 рублей.
 </span>
-<span th:text="'Премия - ' + ${payment.getPrize}  + ' рублей.'">
+<span th:text="'Премия - ' + ${payment.prize}  + ' рублей.'">
     Премия - 1000 рублей.
 </span>
 </body>

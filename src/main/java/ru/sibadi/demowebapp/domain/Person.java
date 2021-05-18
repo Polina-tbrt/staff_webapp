@@ -14,7 +14,7 @@ public class Person {
         this.id = id;
         this.name = name;
         this.salary = salary;
-        payments.add(new Payment(1, id, 10000, 1000, "январь"));
+
     }
 
     public int getId() {
